@@ -1,0 +1,7 @@
+# Code d'origine : contient des notes personnelles, reste sur l'ordinateur, jamais publié.
+import/
+node_modules/
+dist/
+.env
+.env.*
+*.log
