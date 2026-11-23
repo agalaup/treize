@@ -20,11 +20,12 @@ Lu par le tableau de bord : case cochée = fait, case vide = à faire.
 
 - [x] Salon privé avec code à 4 lettres, sans serveur
 - [x] L'appareil de l'hôte fait l'arbitre
-- [ ] Hébergement : choisir l'hébergeur (attend le oui écrit du propriétaire)
+- [x] Hébergement : page en ligne sur GitHub Pages
 
-## Jalon 4 : confort
+## Jalon 4 : confort (v0.4)
 
-- [ ] Appli installable (PWA)
-- [ ] Sauvegarde automatique de la partie
-- [ ] Simulateur d'équilibrage (`scripts/simuler.js`)
-- [ ] Checklist de test avec de vrais joueurs (`docs/playtest.md`)
+- [x] Appli installable (PWA)
+- [x] Sauvegarde automatique de la partie
+- [x] Simulateur d'équilibrage (`scripts/simuler.js`)
+- [x] Checklist de test avec de vrais joueurs (`docs/playtest.md`)
+- [ ] Faire une vraie séance de playtest et remplir la fiche

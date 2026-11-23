@@ -46,6 +46,8 @@ Voir `docs/idees-plus-tard.md`.
 - Le connecteur GitHub de l'appli ne peut pas créer de dépôt (403). Le dépôt a été créé par le navigateur de l'appli, à la demande du propriétaire.
 
 - Vie privée (décidé le 2026-11-22, fait le 2026-11-23) : à la demande du propriétaire, le dépôt public a été supprimé puis recréé sans historique. Le dossier `import/` (notes personnelles) n'est plus publié : il reste sur l'ordinateur, dans `F:\Treize\import`, et il est dans `.gitignore`. C'est la seule exception à la règle « jamais de suppression d'historique », décidée par le propriétaire. L'ancien historique (v0.0 à v0.2) n'existe plus en ligne ; le dépôt repart de la v0.3.
+- Jalon 4 (2026-11-23) : la sauvegarde vit dans `src/ui/sauvegarde.js` (clé `treize-partie` du navigateur, version 1 : changer le numéro si la forme de l'état change). Le service worker est `public/sw.js` : changer `CACHE` pour forcer l'oubli des vieilles copies. Icônes refaites par `npm run icones`.
+- Simulateur, premier relevé : à 2 joueurs entre bots « gourmand », 1 case sur 4 reste vide. À comparer avec de vrais joueurs (`docs/playtest.md`).
 - Avant de publier : ne jamais mettre de prénom réel, d'adresse ou de chemin de l'ordinateur dans un fichier suivi par git.
 
 ## Résultat
@@ -57,4 +59,5 @@ Voir `docs/idees-plus-tard.md`.
 | 2026-11-20 | Jalon 2 : table Treize | Nouveau design, table animée, bots, écran Règles, relecture faite | v0.2 |
 | 2026-11-20 | Jalon 3 : jeu en ligne sans serveur | Salon privé avec code, arbitre chez l'hôte, essai réel entre deux onglets | v0.3 |
 | 2026-11-21 | Mettre le jeu en ligne | Dépôt public et page GitHub Pages | v0.3 |
+| 2026-11-23 | Jalon 4 : confort | Sauvegarde automatique, appli installable, simulateur, fiche de playtest | v0.4 |
 | 2026-11-23 | Retirer les notes personnelles du dépôt public | Dépôt supprimé puis recréé sans historique, `import/` non publié, page remise en ligne | v0.3 |

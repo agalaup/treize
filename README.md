@@ -29,6 +29,14 @@ npm run check
 
 Lance les tests des règles puis construit le jeu.
 
+## Équilibrage
+
+```
+npm run simuler -- --parties 2000 --joueurs 3
+```
+
+Joue des milliers de parties entre bots et affiche les chiffres. La fiche pour tester avec de vrais joueurs : [docs/playtest.md](docs/playtest.md).
+
 ## Comment c'est fait
 
 - `src/logic/` : les règles, les bots et le salon. Fonctions pures, testées.

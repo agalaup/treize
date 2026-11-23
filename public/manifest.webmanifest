@@ -1,0 +1,17 @@
+{
+  "name": "Treize",
+  "short_name": "Treize",
+  "description": "Jeu de cartes à cases cachées, pour 2 à 4 joueurs.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#E4E2DB",
+  "theme_color": "#2A2A28",
+  "icons": [
+    { "src": "icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icone-pleine-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

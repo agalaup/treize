@@ -6,9 +6,9 @@ Validé le 2026-11-20. Un jalon = une session. On demande avant de lancer le jal
 |---|---|---|---|
 | 1. Reprise + règles solides | La V1 tourne hors de Claude, 4 cases, règles séparées de l'affichage et testées | 3 % | fait (v0.1) |
 | 2. Table Treize | Nouveau design (piste 2), table animée, solo contre bots, passe-l'appareil conservé | 9 % | fait (v0.2) |
-| 3. En ligne | Salon privé avec code, chacun sur son appareil (sans serveur, P2P) | 4 % | fait (v0.3), sauf l'hébergement |
-| 3 bis. Hébergement | La page est en ligne : jouable depuis les téléphones | 1 % | en attente du choix d'hébergeur et du oui écrit |
-| 4. Confort | Appli installable, sauvegarde de partie, simulateur d'équilibrage | 6 % | à faire |
+| 3. En ligne | Salon privé avec code, chacun sur son appareil (sans serveur, P2P) | 4 % | fait (v0.3) |
+| 3 bis. Hébergement | La page est en ligne : jouable depuis les téléphones | 1 % | fait (GitHub Pages, 2026-11-21) |
+| 4. Confort | Appli installable, sauvegarde de partie, simulateur d'équilibrage | 6 % | fait (v0.4) |
 
 Les coûts sont en % de la limite hebdo Pro (ordre de grandeur).
 

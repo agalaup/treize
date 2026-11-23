@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "check": "vitest run && vite build"
+    "check": "vitest run && vite build",
+    "simuler": "node scripts/simuler.js",
+    "icones": "node scripts/icones.js"
   },
   "devDependencies": {
     "vite": "^8.3.8",

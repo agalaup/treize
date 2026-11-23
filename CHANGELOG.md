@@ -1,5 +1,13 @@
 # Treize — journal des versions
 
+## v0.4 « confort » — 2026-11-23
+
+- Sauvegarde automatique : une partie solo ou passe-l'appareil se retrouve avec « Reprendre la partie », même après avoir fermé la page. Tout reste sur l'appareil.
+- Appli installable : le jeu s'ajoute à l'écran d'accueil du téléphone et s'ouvre sans réseau (solo et passe-l'appareil). Le jeu en ligne a toujours besoin du réseau.
+- Simulateur d'équilibrage : `npm run simuler` joue des milliers de parties entre bots et donne les chiffres (victoires par siège, cases vides, égalités, échanges).
+- Fiche de playtest : `docs/playtest.md`, à remplir pendant une vraie partie.
+- Les parties en ligne ne sont pas sauvegardées.
+
 ## v0.3 « en ligne » — 2026-11-20
 
 - Jeu en ligne entre amis, sans serveur : un joueur crée un salon, donne un code à 4 lettres, les autres le rejoignent, chacun joue sur son appareil.

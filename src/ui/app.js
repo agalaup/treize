@@ -15,6 +15,7 @@ import { choisirCoup } from '../logic/bots.js';
 import { esc, forme, carte, logo, FAMILLES } from './cartes.js';
 import { ecranRegles } from './regles.js';
 
+import { lirePartie, ecrirePartie, effacerPartie } from './sauvegarde.js';
 const DELAI_BOT = 900;
 const NOMS_PAR_DEFAUT = ['Toi', 'Léa', 'Sam', 'Noa'];
 
@@ -104,6 +105,30 @@ function nouvelle() {
   retournee = null;
   scoresAvant = new Array(cfg.n).fill(0);
   ecran = 'table';
+  ecrirePartie(cfg, etat);
+}
+
+/** Reprend la partie sauvegardée sur cet appareil. */
+function reprendre() {
+  const s = lirePartie();
+  if (!s) return false;
+  clearTimeout(minuteur);
+  jeton++;
+  cfg.n = s.cfg.n;
+  cfg.noms = s.cfg.noms.slice();
+  cfg.types = s.cfg.types.slice();
+  cfg.defausseVisible = !!s.cfg.defausseVisible;
+  etat = s.etat;
+  const h = humains();
+  // Plusieurs humains : personne ne tient l'appareil, l'écran de passage cache les cartes.
+  tient = h.length === 1 ? h[0] : -1;
+  reinitSel();
+  erreur = '';
+  nouveau = null;
+  retournee = null;
+  scoresAvant = etat.scores.slice();
+  ecran = 'table';
+  return true;
 }
 
 function appliquer(coup) {
@@ -116,6 +141,7 @@ function appliquer(coup) {
     return;
   }
   erreur = '';
+  ecrirePartie(cfg, etat);
   reinitSel();
   nouveau = null;
   retournee = null;
@@ -178,7 +204,11 @@ function rendreAccueil() {
   h += '<button type="button" data-a="defausse" data-v="0" aria-pressed="' + !cfg.defausseVisible + '">Cachée</button>';
   h += '</div></section>';
   h += '<p class="erreur" role="alert">' + (erreurEnLigne ? '' : esc(erreur)) + '</p>';
-  h += '<div class="actions"><button type="button" class="bouton primaire grand-bouton" data-a="jouer">Jouer</button>';
+  h += '<div class="actions">';
+  if (lirePartie()) h += '<button type="button" class="bouton primaire grand-bouton" data-a="reprendre">Reprendre la partie</button>';
+  h += lirePartie()
+    ? '<button type="button" class="bouton" data-a="jouer">Nouvelle partie</button>'
+    : '<button type="button" class="bouton primaire grand-bouton" data-a="jouer">Jouer</button>';
   h += '<button type="button" class="bouton" data-a="regles">Règles</button></div>';
   const bloque = enCours ? ' disabled' : '';
   h += '<section class="panneau en-ligne"><h2>En ligne, entre amis</h2>';
@@ -730,6 +760,11 @@ const actions = {
     nouvelle();
     rendre();
   },
+  reprendre() {
+    erreurEnLigne = false;
+    if (!reprendre()) erreur = 'Aucune partie à reprendre.';
+    rendre();
+  },
   rejouer() {
     if (enligne) {
       const c = courant();
@@ -775,6 +810,7 @@ const actions = {
     rendre();
   },
   quitter() {
+    // La partie locale reste sauvegardée : « Reprendre la partie » la rouvre.
     ecran = 'accueil';
     etat = null;
     erreur = '';
